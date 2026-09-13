@@ -1,0 +1,15 @@
+public class Grid5x5 {
+    public static void main(String[] args) {
+        int size = 5;
+        String line = "+---+---+---+---+---+";
+
+        for (int i = 0; i < size; i++) {
+            System.out.println(line);
+            for (int j = 0; j < size; j++) {
+                System.out.print("|   ");
+            }
+            System.out.println("|");
+        }
+        System.out.println(line);
+    }
+}
