@@ -1,0 +1,38 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+
+public class Grid5x5FX extends Application {
+
+    private static final int SIZE = 5;
+    private static final double CELL = 60;
+
+    @Override
+    public void start(Stage stage) {
+        GridPane grid = new GridPane();
+
+        for (int row = 0; row < SIZE; row++) {
+            for (int col = 0; col < SIZE; col++) {
+                Rectangle cell = new Rectangle(CELL, CELL);
+                cell.setFill(Color.WHITE);
+                cell.setStroke(Color.BLACK);
+                grid.add(cell, col, row);
+            }
+        }
+
+        Scene scene = new Scene(grid);
+        stage.setTitle("Grid 5x5");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+javac --module-path $PATH_TO_FX --add-modules javafx.controls Grid5x5FX.java
+java --module-path $PATH_TO_FX --add-modules javafx.controls Grid5x5FX
